@@ -43,12 +43,13 @@ nav ul li:hover {
 }
 
 .steps {
+    cursor: pointer;
     list-style: none;
     text-align: center;
     padding: 0;
 }
 
-.numberCircle{
+/*.number-circle{
     background-color: #494949;
     border-radius: 50%;
     color: #ffffff;
@@ -58,10 +59,9 @@ nav ul li:hover {
     margin-bottom: 0;
     padding: 2px;
     width: 18px;
-}
+}*/
 
 .steps > li {
-    color: #494949;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -69,10 +69,32 @@ nav ul li:hover {
     text-transform: uppercase;
 }
 
+.active-step {
+    background-color: #494949;
+    color: white;
+    border: 1px solid;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.unactive-step {
+    color: #494949;
+    border-bottom: 1px solid #494949;
+}
+
+#content-area {
+    background-color: white;
+    height: 30rem;
+    position: relative;
+}
+
 .selected {
+    position: absolute;
     visibility: visible;
 }
 
 .unselected {
+    position: absolute;
     visibility: hidden;
 }

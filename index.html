@@ -21,26 +21,32 @@
         </nav>
         <div class="app">
             <ul class="steps">
-                <span @click="selectStep1" class="numberCircle">1</span>
-                <span @click="selectStep2"class="numberCircle">2</span>
-                <span @click="selectStep3" class="numberCircle">3</span>
-                <span @click="selectStep4" class="numberCircle">4</span>
-                <li @click="selectStep1">Consideraciones</li>
-                <li @click="selectStep2">Carga la imagen</li>
-                <li @click="selectStep3">Procesando</li>
-                <li @click="selectStep4">¡Listo!</li>
+                <li @click="selectStep1" :class="step1 ? 'active-step':'unactive-step'">Consideraciones</li>
+                <li @click="selectStep2" :class="step2 ? 'active-step':'unactive-step'">Carga la imagen</li>
+                <li @click="selectStep3" :class="step3 ? 'active-step':'unactive-step'">Procesando</li>
+                <li @click="selectStep4" :class="step4 ? 'active-step':'unactive-step'">¡Listo!</li>
             </ul>
-            <div :class="step1 ? 'selected':'unselected'">
-                CONSIDERACIONES
-            </div>
-            <div :class="step2 ? 'selected':'unselected'">
-                CARGA LA IMAGEN
-            </div>
-            <div :class="step3 ? 'selected':'unselected'">
-                ESPERA UN MOMENTO
-            </div>
-            <div :class="step4 ? 'selected':'unselected'">
-                ¡LISTO!
+            <div id="content-area">
+                <div :class="step1 ? 'selected':'unselected'">
+                    <div class="step">
+                        <img src="assets/images/Step1.png">
+                    </div>
+                </div>
+                <div :class="step2 ? 'selected':'unselected'">
+                    <div class="step">
+                        <img src="assets/images/Step2.png">
+                    </div>
+                </div>
+                <div :class="step3 ? 'selected':'unselected'">
+                    <div class="step">
+                        <img src="assets/images/Step3.png">
+                    </div>
+                </div>
+                <div :class="step4 ? 'selected':'unselected'">
+                    <div class="step">
+                        <img src="assets/images/Step4.png">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
