@@ -2,3 +2,10 @@
     display: grid;
     grid-template-columns: repeat(4, 25%);
 }
+
+.step {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    justify-items: center;
+    align-items: center;
+}
