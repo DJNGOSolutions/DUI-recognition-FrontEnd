@@ -19,18 +19,32 @@
                 <li>About Proyect</li>
             </ul>
         </nav>
-        <div class="container">
+        <div class="app">
             <ul class="steps">
-                <span class="numberCircle">1</span>
-                <span class="numberCircle">2</span>
-                <span class="numberCircle">3</span>
-                <span class="numberCircle">4</span>
-                <li>Consideraciones</li>
-                <li>Carga la imagen</li>
-                <li>Paso</li>
-                <li>¡Listo!</li>
+                <span @click="selectStep1" class="numberCircle">1</span>
+                <span @click="selectStep2"class="numberCircle">2</span>
+                <span @click="selectStep3" class="numberCircle">3</span>
+                <span @click="selectStep4" class="numberCircle">4</span>
+                <li @click="selectStep1">Consideraciones</li>
+                <li @click="selectStep2">Carga la imagen</li>
+                <li @click="selectStep3">Procesando</li>
+                <li @click="selectStep4">¡Listo!</li>
             </ul>
+            <div :class="step1 ? 'selected':'unselected'">
+                CONSIDERACIONES
+            </div>
+            <div :class="step2 ? 'selected':'unselected'">
+                CARGA LA IMAGEN
+            </div>
+            <div :class="step3 ? 'selected':'unselected'">
+                ESPERA UN MOMENTO
+            </div>
+            <div :class="step4 ? 'selected':'unselected'">
+                ¡LISTO!
+            </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

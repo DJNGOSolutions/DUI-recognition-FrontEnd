@@ -36,7 +36,7 @@ nav ul li:hover {
     color: #41B883;
 }
 
-.container {
+.app {
     background-color: white;
     border-radius: 5px;
     margin: 50px;
@@ -67,4 +67,12 @@ nav ul li:hover {
     letter-spacing: 1px;
     padding: 20px 0;
     text-transform: uppercase;
+}
+
+.selected {
+    visibility: visible;
+}
+
+.unselected {
+    visibility: hidden;
 }
