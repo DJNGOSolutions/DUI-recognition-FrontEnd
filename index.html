@@ -21,10 +21,10 @@
         </nav>
         <div class="app">
             <ul class="steps">
-                <li @click="selectStep1" :class="step1 ? 'active-step':'unactive-step'">Consideraciones</li>
-                <li @click="selectStep2" :class="step2 ? 'active-step':'unactive-step'">Carga la imagen</li>
-                <li @click="selectStep3" :class="step3 ? 'active-step':'unactive-step'">Procesando</li>
-                <li @click="selectStep4" :class="step4 ? 'active-step':'unactive-step'">¡Listo!</li>
+                <li @click="selectStep(1)" :class="step1 ? 'active-step':'unactive-step'">Consideraciones</li>
+                <li @click="selectStep(2)" :class="step2 ? 'active-step':'unactive-step'">Carga la imagen</li>
+                <li @click="selectStep(3)" :class="step3 ? 'active-step':'unactive-step'">Procesando</li>
+                <li @click="selectStep(4)" :class="step4 ? 'active-step':'unactive-step'">¡Listo!</li>
             </ul>
             <div id="content-area">
                 <div :class="step1 ? 'selected':'unselected'">
@@ -49,18 +49,6 @@
                 <div :class="step2 ? 'selected':'unselected'">
                     <div class="step">
                         <div>
-                            <ul>
-                                <li>Las imágenes que subas deben de estar guardadas en uno de los siguientes formatos: JPG, JPEG o PNG.</li>
-                                <li>Descarga e imprime el siguiente documento.</li>
-                                <li>Toma la foto de modo que solo sea visible la parte negra alrededor del DUI.</li>
-                                <li>Si no te es posible imprimir el documento puedes hacerlo por tu cuenta.</li>
-                                <li>Las medidas las siguientes:</li>
-                                <ul>
-                                    <li>Medidas externa:</li>
-                                    <li>Medidas internas:</li>
-                                </ul>
-                                <li>Asegurate que la resolución de la imagen permita entender con facilidad el contenido de esta.</li>
-                            </ul>
                         </div>
                         <img src="assets/images/Step2.png">
                     </div>
@@ -103,6 +91,10 @@
                         <img src="assets/images/Step4.png">
                     </div>
                 </div>
+            </div>
+            <div class="buttons">
+                <button @click="clickPrevious" :class="step1 ? 'unactive-button':'active-button'">PREVIOUS</button>
+                <button @click="clickNext":class="step4 ? 'unactive-button':'active-button'">NEXT</button>
             </div>
         </div>
     </div>

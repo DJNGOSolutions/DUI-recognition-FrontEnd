@@ -103,6 +103,28 @@ nav ul li:hover {
     visibility: hidden;
 }
 
-.step {
-    margin: auto;
+
+.buttons > button {
+    border: solid 4px white;
+    height: 60px;
+    width: 100%;
+}
+
+.active-button {
+    background-color: #41B883;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.unactive-button {
+    color: default;
+}
+
+.buttons :first-child {
+    border-right: solid 2px white;
+}
+
+.buttons :nth-child(2) {
+    border-left: solid 2px white;
 }

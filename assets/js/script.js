@@ -7,47 +7,46 @@ let app = new Vue({
         step4: false
     },
     methods: {
-        selectStep1() {
-            this.step1 = true
+        selectStep(numberStep) {
+            this.step1 = false
             this.step2 = false
             this.step3 = false
             this.step4 = false
-            console.log(this.step1)
-            console.log(this.step2)
-            console.log(this.step3)
-            console.log(this.step4)
+            if(numberStep == 1) {
+                this.step1 = true
+            } else if (numberStep == 2) {
+                this.step2 = true
+            } else if (numberStep == 3) {
+                this.step3 = true
+            } else if (numberStep == 4) {
+                this.step4 = true
+            }
         },
 
-        selectStep2() {
-            this.step1 = false
-            this.step2 = true
-            this.step3 = false
-            this.step4 = false
-            console.log(this.step1)
-            console.log(this.step2)
-            console.log(this.step3)
-            console.log(this.step4)
-        },
-        selectStep3() {
-            this.step1 = false
-            this.step2 = false
-            this.step3 = true
-            this.step4 = false
-            console.log(this.step1)
-            console.log(this.step2)
-            console.log(this.step3)
-            console.log(this.step4)
+        clickNext(){
+            if(this.step1 === true){
+                this.step1 = false
+                this.step2 = true
+            } else if(this.step2 === true){
+                this.step2 = false
+                this.step3 = true
+            } else if(this.step3 === true){
+                this.step3 = false
+                this.step4 = true
+            }
         },
 
-        selectStep4() {
-            this.step1 = false
-            this.step2 = false
-            this.step3 = false
-            this.step4 = true
-            console.log(this.step1)
-            console.log(this.step2)
-            console.log(this.step3)
-            console.log(this.step4)
+        clickPrevious(){
+            if(this.step4 === true){
+                this.step4 = false
+                this.step3 = true
+            } else if(this.step3 === true){
+                this.step3 = false
+                this.step2 = true
+            } else if(this.step2 === true){
+                this.step2 = false
+                this.step1 = true
+            }
         }
     }
 })
