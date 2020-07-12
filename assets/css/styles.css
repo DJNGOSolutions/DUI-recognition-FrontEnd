@@ -22,6 +22,7 @@ nav > ul {
     list-style: none;
 }
 nav > ul > li {
+    cursor: pointer;
     display: inline-block;
     padding: 0 1vw 0 1vw;
 }
@@ -75,8 +76,8 @@ nav ul li:hover {
     color: white;
     border: 1px solid;
     border-bottom: none;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .unactive-step {
@@ -103,9 +104,35 @@ nav ul li:hover {
     visibility: hidden;
 }
 
+.inputfile {
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0.1px;
+    z-index: -4;
+}
+
+.inputfile + label {
+    background-color: #41B883;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 8px 15px;
+}
+
+.inputfile:focus + label {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    pointer-events: none;
+}
 
 .buttons > button {
     border: solid 4px white;
+    border-radius: 7px;
     height: 60px;
     width: 100%;
 }
