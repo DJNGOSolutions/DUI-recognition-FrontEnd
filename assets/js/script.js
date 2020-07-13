@@ -1,10 +1,13 @@
+import axios from 'axios'
+
 let app = new Vue({
     el: '.app',
     data: {
         step1: true,
         step2: false,
         step3: false,
-        step4: false
+        step4: false,
+        selectedFile: null
     },
     methods: {
         selectStep(numberStep) {
@@ -47,6 +50,19 @@ let app = new Vue({
                 this.step2 = false
                 this.step1 = true
             }
+        },
+
+        onFileSelected(event) {
+            this.selectedFile = event.target.files[0]
+        },
+
+        onUpload() {
+            const formData = FormData();
+            formData.append('dui', this.selectedFile, this.selectedFile.name)
+            axios.post('', formData)
+            .then(res => {
+                console.log(res)
+            })
         }
     }
 })

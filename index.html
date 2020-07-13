@@ -50,7 +50,8 @@
                     <div class="step">
                         <div>
                             <input type="file" name="file" id="file" class="inputfile">
-                            <label for="file">Choose a file</label>
+                            <label for="file" @change="onFileSelected">Choose a file</label>
+                            <button @click="onUpload">Upload</button>
                         </div>
                         <img src="assets/images/Step2.png">
                     </div>
